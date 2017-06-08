@@ -17,3 +17,4 @@
   add_host:
     name: "{{ physical_host | default(ansible_host) }}"
     groups: maas_restart_on_host
+  with_items: "{{ groups[maas_current_group] }}"
